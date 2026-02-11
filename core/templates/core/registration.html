@@ -2,6 +2,9 @@
 <title>{% block title %}Register{% endblock title %}Login</title>
 {% block main_content %}
 <div class="container-fluid col-6 main_box">
+    <div class="alert alert-primary" role="alert">
+        A simple primary alert—check it out!
+    </div>
     <h2>Register</h2>
     <form method="post" class="myform">
         {% csrf_token %}
