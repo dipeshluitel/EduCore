@@ -2,9 +2,7 @@
 <title>{% block title %}Register{% endblock title %}Login</title>
 {% block main_content %}
 <div class="container-fluid col-6 main_box">
-    <div class="alert alert-primary" role="alert">
-        A simple primary alert—check it out!
-    </div>
+
     <h2>Register</h2>
     <form method="post" class="myform">
         {% csrf_token %}
@@ -20,7 +18,7 @@
             <div class="mb-3">
                 <label for="logo" class="form-label">Institution Logo</label>
                 <input type="file" accept="image/*" class="form-control" id="logo" name='logo' width="100" height="50"
-                    aria-describedby="emailHelp" required>
+                    aria-describedby="emailHelp">
             </div>
         </div>
         <div class="mb-3">

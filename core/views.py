@@ -29,9 +29,11 @@ def register_view(request):
         logo = request.POST.get('logo')
 
         if pass1 != pass2:
+            messages.error(request, "Password don't match")
             return redirect('registerview')
         
         if User.objects.filter(username = username).exists():
+            messages.error(request, "Username already exists")
             return redirect('registerview') 
         
         user = User.objects.create(
@@ -42,6 +44,7 @@ def register_view(request):
             logo = logo,
         )
         user.save()
+        messages.success(request, "User Created Successfully, Please Login")
         return redirect(register_view)
 
 
