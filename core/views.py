@@ -5,15 +5,24 @@ from django.contrib import messages
 
 # Create your views here.
 def login_view(request):
+
+    # TODO : #This is wrong( need to create custom users)
     if request.method == 'POST':
-        email = request.POST.get('email').lower()
+        username = request.POST.get('username')
         password = request.POST.get('password')
 
-        user = authenticate(User,email=email,password=password)
+        if not username or not password:
+            messages.error(request, "Please enter both username and password.")
+            return redirect('loginview')
+        username = username.lower()
+
+        user = authenticate(request,username=username,password=password) 
         if user:
             login(request,user)
+            messages.success(request, "Successfully Logged In")
             return redirect('dashboard')
         else:
+            messages.error(request, "Email or Password seems to be wrong")
             return redirect('loginview')
         
     return render(request,'core/login.html')
@@ -25,8 +34,8 @@ def register_view(request):
         email = request.POST.get('email').lower()
         pass1 = request.POST.get('password1')
         pass2 = request.POST.get('password2')
-        location = request.POST.get('location')
-        logo = request.POST.get('logo')
+        # location = request.POST.get('location')
+        # logo = request.POST.get('logo')
 
         if pass1 != pass2:
             messages.error(request, "Password don't match")
@@ -36,16 +45,16 @@ def register_view(request):
             messages.error(request, "Username already exists")
             return redirect('registerview') 
         
-        user = User.objects.create(
+        user = User.objects.create_user(
             username = username,
             email = email,
             password = pass1,
-            location = location,
-            logo = logo,
+            # location = location,
+            # logo = logo,
         )
         user.save()
         messages.success(request, "User Created Successfully, Please Login")
-        return redirect(register_view)
+        return redirect("registerview")
 
 
     return render(request,'core/registration.html')
