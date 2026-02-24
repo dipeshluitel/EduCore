@@ -3,6 +3,7 @@ from django.contrib.auth.models import User
 from django.contrib.auth import login, logout, authenticate
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
+from django.contrib.messages import get_messages
 
 # Create your views here.
 def login_view(request):
@@ -62,6 +63,9 @@ def register_view(request):
 
 def logout_view(request):
     logout(request)
+    storage = get_messages(request)
+    for _ in storage:
+        pass
     messages.success(request, "Logged Out, Please Login")
     return redirect('loginview')
 
