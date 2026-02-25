@@ -1,9 +1,318 @@
-*,html{
-    margin: 0px;
-    padding: 0px;
-    border: 1px solid black;
-    /* background-color: black; */
+:root {
+    --navy: #0a1628;
+    --deep: #0f2044;
+    --royal: #1a3a6b;
+    --sky: #2a7af2;
+    --aqua: #00c6d7;
+    --gold: #f0b429;
+    --cream: #f9f5ee;
+    --muted: #a0aec0;
 }
-.base-container{
-    margin-top: 100px;
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--navy) !important;
+    color: #e2e8f0;
+    overflow-x: hidden;
+}
+
+.navbar {
+    background: rgba(10, 22, 40, 0.85);
+    backdrop-filter: blur(1px);
+    border-bottom: 1px solid rgba(42, 122, 242, 0.15);
+    padding: 1rem 0;
+}
+
+.navbar-brand {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.6rem;
+    color: #fff !important;
+    letter-spacing: -0.5px;
+}
+
+.navbar-brand span {
+    color: var(--aqua);
+}
+
+.nav-link {
+    color: var(--muted) !important;
+    font-weight: 500;
+    transition: color .2s;
+    font-size: 0.95rem;
+}
+
+.nav-link:hover {
+    color: #fff !important;
+}
+
+/* ─── HERO ─── */
+
+.hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2.8rem, 6vw, 5rem);
+    line-height: 1.1;
+    color: #fff;
+    font-weight: 900;
+}
+
+.hero h1 .accent {
+    background: linear-gradient(90deg, var(--sky), var(--aqua));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.hero p {
+    color: var(--muted);
+    font-size: 1.15rem;
+    line-height: 1.75;
+    max-width: 520px;
+}
+
+.btn-primary-custom {
+    background: linear-gradient(135deg, var(--sky), var(--aqua));
+    color: #fff !important;
+    border: none;
+    border-radius: 10px;
+    padding: .75rem 1.8rem;
+    font-size: 1rem;
+}
+
+.btn-primary-custom:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 30px rgba(42, 122, 242, .45);
+    color: #fff;
+}
+
+/* ─── SECTION STYLES ─── */
+section {
+    padding: 6rem 0;
+}
+
+.section-label {
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--aqua);
+    margin-bottom: .75rem;
+}
+
+.section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2rem, 4vw, 3rem);
+    color: #fff;
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+.section-sub {
+    color: var(--muted);
+    font-size: 1rem;
+    line-height: 1.7;
+}
+
+/* ─── FEATURES ─── */
+.features-section {
+    background: var(--deep);
+}
+
+.feature-card {
+    background: rgba(26, 58, 107, 0.3);
+    border: 1px solid rgba(42, 122, 242, .15);
+    border-radius: 16px;
+    padding: 2rem;
+    height: 100%;
+    transition: transform .3s, border-color .3s, box-shadow .3s;
+    position: relative;
+    overflow: hidden;
+}
+
+.feature-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--sky), var(--aqua));
+    transform: scaleX(0);
+    transition: transform .3s;
+}
+
+.feature-card:hover {
+    transform: translateY(-6px);
+    border-color: rgba(42, 122, 242, .4);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, .3);
+}
+
+.feature-card:hover::before {
+    transform: scaleX(1);
+}
+
+.feature-icon {
+    width: 52px;
+    height: 52px;
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.4rem;
+    margin-bottom: 1.25rem;
+}
+
+.feature-card h5 {
+    color: #fff;
+    font-weight: 600;
+    margin-bottom: .5rem;
+    font-size: 1.05rem;
+}
+
+.feature-card p {
+    color: var(--muted);
+    font-size: 0.9rem;
+    line-height: 1.65;
+}
+
+/* ─── TESTIMONIALS ─── */
+.testimonials-section {
+    background: var(--deep);
+}
+
+.testi-card {
+    background: rgba(26, 58, 107, .3);
+    border: 1px solid rgba(42, 122, 242, .15);
+    border-radius: 16px;
+    padding: 1.8rem;
+    height: 100%;
+}
+
+.testi-card .quote {
+    color: var(--aqua);
+    font-size: 2rem;
+    line-height: 1;
+    margin-bottom: .75rem;
+}
+
+.testi-card p {
+    color: #cbd5e0;
+    font-size: 0.92rem;
+    line-height: 1.7;
+    font-style: italic;
+}
+
+.testi-author {
+    margin-top: 1.25rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.testi-avatar {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--sky), var(--aqua));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    color: #fff;
+    font-size: 1rem;
+}
+
+.testi-author h6 {
+    color: #fff;
+    margin: 0;
+    font-size: 0.9rem;
+}
+
+.testi-author span {
+    color: var(--muted);
+    font-size: 0.8rem;
+}
+
+.stars {
+    color: var(--gold);
+    font-size: 0.8rem;
+    margin-bottom: .5rem;
+}
+
+/* ─── FOOTER ─── */
+footer {
+    background: var(--navy);
+    border-top: 1px solid rgba(42, 122, 242, .1);
+    padding: 3.5rem 0 2rem;
+}
+
+.footer-brand {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    color: #fff;
+}
+
+.footer-brand span {
+    color: var(--aqua);
+}
+
+footer p {
+    color: var(--muted);
+    font-size: 0.88rem;
+    line-height: 1.7;
+    max-width: 260px;
+}
+
+.footer-heading {
+    color: #fff;
+    font-weight: 600;
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.footer-links {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-links li {
+    margin-bottom: 8px;
+}
+
+.footer-links a {
+    color: var(--muted);
+    font-size: 0.88rem;
+    text-decoration: none;
+    transition: color .2s;
+}
+
+.footer-links a:hover {
+    color: #fff;
+}
+
+.social-icon {
+    width: 36px;
+    height: 36px;
+    border-radius: 8px;
+    background: rgba(42, 122, 242, .1);
+    border: 1px solid rgba(42, 122, 242, .2);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--muted);
+}
+
+.social-icon:hover {
+    background: rgba(42, 122, 242, .3);
+    color: #fff;
+}
+
+.footer-bottom {
+    border-top: 1px solid rgba(255, 255, 255, .06);
+    margin-top: 2.5rem;
+    padding-top: 1.5rem;
 }

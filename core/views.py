@@ -69,6 +69,12 @@ def logout_view(request):
     messages.success(request, "Logged Out, Please Login")
     return redirect('loginview')
 
+def features_view(request):
+    return render(request,'core/features.html')
+
+def reviews_view(request):
+    return render(request,'core/reviews.html')
+
 @login_required(login_url='loginview')
 def dashboard(request):
     return render(request,'core/dashboard.html')

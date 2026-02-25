@@ -3,4 +3,6 @@ from core import views
 
 urlpatterns = [
     path('', views.dashboard, name='dashboard'),
+    path('/reviews', views.reviews_view, name='reviews'),
+    path('/features', views.features_view, name='features'),
 ]
