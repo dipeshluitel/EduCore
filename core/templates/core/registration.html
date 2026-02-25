@@ -2,7 +2,7 @@
 <title>{% block title %}Register{% endblock title %}Login</title>
 {% block main_content %}
 <section class="register_page">
-    <div class="container-fluid col-6 main_box">
+    <div class="container-fluid col-6 main_box form_area">
 
         <h2>Register</h2>
         <form method="post" class="myform">
@@ -10,7 +10,7 @@
 
             {% if messages %}
             {% for message in messages %}
-            <div class="alert alert-primary" role="alert">
+            <div class="alert alert-primary mb-5" role="alert">
                 {{ message }}
             </div>
             {% endfor %}
@@ -50,7 +50,7 @@
             </div>
             <button type="submit" class="btn btn-primary">Register</button>
         </form>
-        <a href="{% url 'loginview' %}" style="color: #000;">Already have an account?</a>
+        <a href="{% url 'loginview' %}" style="color: #fff; text-decoration: none;">Already have an account?</a>
 
 
     </div>
