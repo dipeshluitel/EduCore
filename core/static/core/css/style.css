@@ -87,6 +87,11 @@ body {
     color: var(--navy) !important;
 }
 
+.hero-img {
+    width: 100%;
+    height: auto;
+}
+
 /* ─── SECTION STYLES ─── */
 section {
     padding: 6rem 0;

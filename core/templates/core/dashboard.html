@@ -11,15 +11,15 @@
     <h3 style="color: #ffff;">Welcome, <span> {{user.username}}</span></h3>
     <div class="container mt-4">
         <div class="row align-items-center g-5">
-            <div class="col-lg-6">
+            <div class="col-6">
                 <h1>The Smarter Way Of <span class="accent">Educating Yourself</span></h1>
                 <p class="mt-4">EduCore provides you the modern way of training and educating yourself</p>
                 <div class="d-flex flex-wrap gap-3 mt-4 fade-up delay-3">
                     <a href="{% url 'loginview' %}" class="btn btn-primary-custom">Login Now</a>
                 </div>
             </div>
-            <div class="col-lg-6">
-                <img src="{% static 'core/images/favicon.png' %}" width="500" height="500" alt="EduCore Logo">
+            <div class="col-6">
+                <img src="{% static 'core/images/favicon.png' %}" class="hero-img" alt="EduCore Logo">
             </div>
         </div>
     </div>
