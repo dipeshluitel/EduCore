@@ -72,10 +72,15 @@ def logout_view(request):
 def features_view(request):
     return render(request,'core/features.html')
 
+@login_required(login_url='loginview')
 def reviews_view(request):
     return render(request,'core/reviews.html')
 
-@login_required(login_url='loginview')
 def dashboard(request):
     return render(request,'core/dashboard.html')
-    
+
+@login_required(login_url='loginview')
+def notes_view(request):
+    return render(request,'core/notes.html')
+
+# TODO: ADD Lock_icon above nav-bar that requires login required and remove them when logged in
