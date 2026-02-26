@@ -2,175 +2,162 @@
 {% load static %}
 <title>{% block title %}Dashboard{% endblock title %}Login</title>
 {% block main_content %}
-<!DOCTYPE html>
-<html lang="en">
 
-<head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>EduSphere — School Management System</title>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css" rel="stylesheet" />
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.11.3/font/bootstrap-icons.min.css"
-        rel="stylesheet" />
-    <link
-        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@300;400;500;600&display=swap"
-        rel="stylesheet" />
-</head>
-
-<body>
-
-    <!-- HERO -->
-    <section class="hero">
-        {% comment %} <div class="hero-grid"></div> {% endcomment %}
-        {% comment %} <div class="hero-glow"></div> {% endcomment %}
-        {% comment %} <div class="hero-glow2"></div> {% endcomment %}
-        <h3 style="color: #ffff;">Welcome, <span> {{user.username}}</span></h3>
-        <div class="container mt-4">
-            <div class="row align-items-center g-5">
-                <div class="col-lg-6">
-                    <h1>The Smarter Way Of <span class="accent">Educating Yourself</span></h1>
-                    <p class="mt-4">EduCore provides you the modern way of training and educating yourself</p>
-                    <div class="d-flex flex-wrap gap-3 mt-4 fade-up delay-3">
-                        <a href="{% url 'loginview' %}" class="btn btn-primary-custom">Login Now</a>
-                    </div>
+<!-- HERO -->
+<section class="hero">
+    {% comment %} <div class="hero-grid"></div> {% endcomment %}
+    {% comment %} <div class="hero-glow"></div> {% endcomment %}
+    {% comment %} <div class="hero-glow2"></div> {% endcomment %}
+    <h3 style="color: #ffff;">Welcome, <span> {{user.username}}</span></h3>
+    <div class="container mt-4">
+        <div class="row align-items-center g-5">
+            <div class="col-lg-6">
+                <h1>The Smarter Way Of <span class="accent">Educating Yourself</span></h1>
+                <p class="mt-4">EduCore provides you the modern way of training and educating yourself</p>
+                <div class="d-flex flex-wrap gap-3 mt-4 fade-up delay-3">
+                    <a href="{% url 'loginview' %}" class="btn btn-primary-custom">Login Now</a>
                 </div>
-                <div class="col-lg-6">
-                    <img src="{% static 'core/images/favicon.png' %}" width="500" height="500" alt="EduCore Logo">
+            </div>
+            <div class="col-lg-6">
+                <img src="{% static 'core/images/favicon.png' %}" width="500" height="500" alt="EduCore Logo">
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- FEATURES -->
+<section id="features" class="features-section">
+    <div class="container">
+        <div class="text-center mb-5">
+            <div class="section-label">Why EduCore</div>
+            <h2 class="section-title">Everything Students Needs</h2>
+            <p class="section-sub mt-3 mx-auto" style="max-width:540px;">Purpose-built tools for modern educational
+                institutions, designed to reduce administrative burden and amplify learning outcomes.</p>
+        </div>
+        <div class="row g-4">
+            <div class="col-md-6 col-lg-4">
+                <div class="feature-card">
+                    <div class="feature-icon" style="background:rgba(42,122,242,.15)"><i class="bi bi-person-check-fill"
+                            style="color:var(--sky)"></i></div>
+                    <h5>Smart Attendance</h5>
+                    <p>Automated attendance tracking with biometric and QR support. Real-time reports and parent
+                        notifications on absences.</p>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-4">
+                <div class="feature-card">
+                    <div class="feature-icon" style="background:rgba(0,198,215,.15)"><i class="bi bi-journal-text"
+                            style="color:var(--aqua)"></i></div>
+                    <h5>Academic Management</h5>
+                    <p>Manage curricula, timetables, grades, and report cards from one dashboard. Supports multiple
+                        grading systems.</p>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-4">
+                <div class="feature-card">
+                    <div class="feature-icon" style="background:rgba(240,180,41,.15)"><i class="bi bi-cash-coin"
+                            style="color:var(--gold)"></i></div>
+                    <h5>Fee Management</h5>
+                    <p>Online fee collection, automated receipts, payment tracking, and financial reporting for your
+                        finance team.</p>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-4">
+                <div class="feature-card">
+                    <div class="feature-icon" style="background:rgba(72,187,120,.15)"><i class="bi bi-chat-dots-fill"
+                            style="color:#48bb78"></i></div>
+                    <h5>Parent Communication</h5>
+                    <p>Built-in messaging, announcements, and a parent portal to keep families engaged with their
+                        child's progress.</p>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-4">
+                <div class="feature-card">
+                    <div class="feature-icon" style="background:rgba(159,122,234,.15)"><i class="bi bi-shield-check"
+                            style="color:#9f7aea"></i></div>
+                    <h5>Role-based Access</h5>
+                    <p>Granular permissions for admins, teachers, students, and parents. GDPR-compliant data
+                        handling by default.</p>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-4">
+                <div class="feature-card">
+                    <div class="feature-icon" style="background:rgba(245,101,101,.15)"><i class="bi bi-bar-chart-fill"
+                            style="color:#fc8181"></i></div>
+                    <h5>Analytics & Reports</h5>
+                    <p>Powerful dashboards with actionable insights on performance, attendance trends, and
+                        institutional health metrics.</p>
                 </div>
             </div>
         </div>
-    </section>
-
-    <!-- FEATURES -->
-    <section id="features" class="features-section">
-        <div class="container">
-            <div class="text-center mb-5">
-                <div class="section-label">Why EduCore</div>
-                <h2 class="section-title">Everything Students Needs</h2>
-                <p class="section-sub mt-3 mx-auto" style="max-width:540px;">Purpose-built tools for modern educational
-                    institutions, designed to reduce administrative burden and amplify learning outcomes.</p>
-            </div>
-            <div class="row g-4">
-                <div class="col-md-6 col-lg-4">
-                    <div class="feature-card">
-                        <div class="feature-icon" style="background:rgba(42,122,242,.15)"><i
-                                class="bi bi-person-check-fill" style="color:var(--sky)"></i></div>
-                        <h5>Smart Attendance</h5>
-                        <p>Automated attendance tracking with biometric and QR support. Real-time reports and parent
-                            notifications on absences.</p>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-4">
-                    <div class="feature-card">
-                        <div class="feature-icon" style="background:rgba(0,198,215,.15)"><i class="bi bi-journal-text"
-                                style="color:var(--aqua)"></i></div>
-                        <h5>Academic Management</h5>
-                        <p>Manage curricula, timetables, grades, and report cards from one dashboard. Supports multiple
-                            grading systems.</p>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-4">
-                    <div class="feature-card">
-                        <div class="feature-icon" style="background:rgba(240,180,41,.15)"><i class="bi bi-cash-coin"
-                                style="color:var(--gold)"></i></div>
-                        <h5>Fee Management</h5>
-                        <p>Online fee collection, automated receipts, payment tracking, and financial reporting for your
-                            finance team.</p>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-4">
-                    <div class="feature-card">
-                        <div class="feature-icon" style="background:rgba(72,187,120,.15)"><i
-                                class="bi bi-chat-dots-fill" style="color:#48bb78"></i></div>
-                        <h5>Parent Communication</h5>
-                        <p>Built-in messaging, announcements, and a parent portal to keep families engaged with their
-                            child's progress.</p>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-4">
-                    <div class="feature-card">
-                        <div class="feature-icon" style="background:rgba(159,122,234,.15)"><i class="bi bi-shield-check"
-                                style="color:#9f7aea"></i></div>
-                        <h5>Role-based Access</h5>
-                        <p>Granular permissions for admins, teachers, students, and parents. GDPR-compliant data
-                            handling by default.</p>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-4">
-                    <div class="feature-card">
-                        <div class="feature-icon" style="background:rgba(245,101,101,.15)"><i
-                                class="bi bi-bar-chart-fill" style="color:#fc8181"></i></div>
-                        <h5>Analytics & Reports</h5>
-                        <p>Powerful dashboards with actionable insights on performance, attendance trends, and
-                            institutional health metrics.</p>
-                    </div>
-                </div>
-            </div>
+    </div>
+</section>
+<br>
+<!-- TESTIMONIALS -->
+<section id="testimonials" class="testimonials-section">
+    <div class="container">
+        <div class="text-center mb-5">
+            <div class="section-label">Testimonials</div>
+            <h2 class="section-title">Loved by Students Everywhere</h2>
         </div>
-    </section>
-    <br>
-    <!-- TESTIMONIALS -->
-    <section id="testimonials" class="testimonials-section">
-        <div class="container">
-            <div class="text-center mb-5">
-                <div class="section-label">Testimonials</div>
-                <h2 class="section-title">Loved by Students Everywhere</h2>
+        <div class="row g-4">
+            <div class="col-md-6 col-lg-4">
+                <div class="testi-card">
+                    <div class="stars"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+                            class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                    </div>
+                    <p>EduSphere completely transformed our administrative workflow. What used to take days now
+                        takes hours. The parent portal alone has improved our community relationships dramatically.
+                    </p>
+                    <div class="testi-author">
+                        <div class="testi-avatar">SR</div>
+                        <div>
+                            <h6>Sarah Reynolds</h6>
+                            <span>Principal, Greenfield Academy</span>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="row g-4">
-                <div class="col-md-6 col-lg-4">
-                    <div class="testi-card">
-                        <div class="stars"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
-                                class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
-                                class="bi bi-star-fill"></i></div>
-                        <p>EduSphere completely transformed our administrative workflow. What used to take days now
-                            takes hours. The parent portal alone has improved our community relationships dramatically.
-                        </p>
-                        <div class="testi-author">
-                            <div class="testi-avatar">SR</div>
-                            <div>
-                                <h6>Sarah Reynolds</h6>
-                                <span>Principal, Greenfield Academy</span>
-                            </div>
+            <div class="col-md-6 col-lg-4">
+                <div class="testi-card">
+                    <div class="stars"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+                            class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                    </div>
+                    <p>The fee management module saved us weeks of reconciliation every month. Real-time dashboards
+                        give me everything I need to keep the board informed. Truly exceptional software.</p>
+                    <div class="testi-author">
+                        <div class="testi-avatar" style="background:linear-gradient(135deg,var(--aqua),var(--sky))">
+                            MK</div>
+                        <div>
+                            <h6>Michael Kaur</h6>
+                            <span>CFO, Sunrise International School</span>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-6 col-lg-4">
-                    <div class="testi-card">
-                        <div class="stars"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
-                                class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
-                                class="bi bi-star-fill"></i></div>
-                        <p>The fee management module saved us weeks of reconciliation every month. Real-time dashboards
-                            give me everything I need to keep the board informed. Truly exceptional software.</p>
-                        <div class="testi-author">
-                            <div class="testi-avatar" style="background:linear-gradient(135deg,var(--aqua),var(--sky))">
-                                MK</div>
-                            <div>
-                                <h6>Michael Kaur</h6>
-                                <span>CFO, Sunrise International School</span>
-                            </div>
-                        </div>
+            </div>
+            <div class="col-md-6 col-lg-4">
+                <div class="testi-card">
+                    <div class="stars"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+                            class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-half"></i>
                     </div>
-                </div>
-                <div class="col-md-6 col-lg-4">
-                    <div class="testi-card">
-                        <div class="stars"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
-                                class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
-                                class="bi bi-star-half"></i></div>
-                        <p>As a teacher, I love how easy it is to record grades, share assignments, and communicate with
-                            parents. It's intuitive and saves me at least 2 hours every single day.</p>
-                        <div class="testi-author">
-                            <div class="testi-avatar" style="background:linear-gradient(135deg,#f093fb,#f5576c)">LT
-                            </div>
-                            <div>
-                                <h6>Lisa Torres</h6>
-                                <span>Senior Teacher, Lakewood High</span>
-                            </div>
+                    <p>As a teacher, I love how easy it is to record grades, share assignments, and communicate with
+                        parents. It's intuitive and saves me at least 2 hours every single day.</p>
+                    <div class="testi-author">
+                        <div class="testi-avatar" style="background:linear-gradient(135deg,#f093fb,#f5576c)">LT
+                        </div>
+                        <div>
+                            <h6>Lisa Torres</h6>
+                            <span>Senior Teacher, Lakewood High</span>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </section>
+        <div class="d-flex flex-wrap gap-3 mt-5 justify-content-end">
+            <a href="{% url 'reviews' %}" class="btn btn-primary-custom btn-testomonial">Leave Review</a>
+        </div>
+    </div>
+</section>
 </body>
 
 </html>
