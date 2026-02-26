@@ -29,11 +29,11 @@
       </button>
       <div class="collapse navbar-collapse" id="navMenu">
         <ul class="navbar-nav mx-auto gap-1">
-          <li class="nav-item"><a class="nav-link px-3" href="{% url 'notes' %}"><i
-                class="bi bi-lock-fill"></i>Notes</a></li>
+          <li class="nav-item"><a class="nav-link px-3" href="{% url 'notes' %}">{% if not user.is_authenticated %}<i
+                class="bi bi-lock-fill"></i>{% endif %}Notes</a></li>
           <li class="nav-item"><a class="nav-link px-3" href="{% url 'features' %}">Features</a></li>
-          <li class="nav-item"><a class="nav-link px-3" href="{% url 'reviews' %}"><i
-                class="bi bi-lock-fill"></i>Reviews</a></li>
+          <li class="nav-item"><a class="nav-link px-3" href="{% url 'reviews' %}">{% if not user.is_authenticated %}<i
+                class="bi bi-lock-fill"></i>{% endif %}Reviews</a></li>
           <li class="nav-item"><a class="nav-link px-3" href="https://www.dipeshluitel.com.np">About Developer</a></li>
         </ul>
         <div class="d-flex gap-2 mt-3 mt-lg-0">
